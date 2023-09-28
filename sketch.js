@@ -1,5 +1,4 @@
-let CircleCount = 24;
-let LineCount = 12;
+let battonCount = 24;
 
 function setup() {
   createCanvas(800, 800);
@@ -8,17 +7,16 @@ function draw() {
   randomSeed(1000)
   background(161, 193,255 );
 
-  for (let c = 0; c <= CircleCount; c+=1) {
+  for (let c = 0; c <= battonCount; c+=1) {
     let x1 = random(width);
     let y1 = random(height);
-    strokeWeight(0)
-    ellipse(x1, y1, 30, 30);
+    let x2 = random(width);
+    let y2 = random(height);
+    strokeWeight(1)
+    fill('black')
+    line(x1, y1, x2, y2);
+    ellipse(x1, y1, 12, 12);
+    ellipse(x2, y2, 12, 12);
     
-    for (let l = c; l <= LineCount; l+=1) {
-      let x2 = (CircleCount-1)*x1;
-      let y2 = (CircleCount-1)*y1;
-      strokeWeight(1)
-      line(x1, y1, x2, y2);
-    }
   }
 }
